@@ -6,44 +6,40 @@
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="lib/docs.css">
 </head>
-
-<body ng-app="BlankApp" ng-controller="UserController as ul" layout="column" ng-cloak>
-    <md-toolbar layout="row">
+<body ng-app="starterApp" ng-cloak layout="column" ng-controller="UserController as ul">
+  <!--
+    Your HTML content here
+  -->       <md-toolbar layout="row">
       <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
         <md-icon md-svg-icon="menu" ></md-icon>
       </md-button>
       <h1>Angular Material - Starter App</h1>
     </md-toolbar>
 
-  <div ng-cloak class="container" layout="row" flex>
-    <!--declarative components are md- the ones below-->
-    <!--a second type is a programmatic component-interact with these through a programmatic api bottom sheet is one of them and you can see that we've injected in the UserController $mdBottomSheet-->
-      <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
-      
-        <md-list>
-          <md-list-item ng-repeat="u in ul.users">
-            <md-button ng-click="ul.selectUser(u)">
-             {{u.name}}
-            </md>
-           </md-list-item>
-           
-           
-        </md-list>
-    
-    </md-sidenav>
-      <md-content id="content" flex>
-         
-        <h2>{{ul.selected.name}}</h2>
-        <p>{{ul.selected.content}}</p>
-        <md-button class="share" md-no-ink aria-label="Share" ng-click="ul.share(ul.selected)">
-          <md-icon md-svg-icon="share"></md-icon>
-        </md-button>
-      </md-content>
-  </div>
-  
 
-  
-  
+    <div flex layout="row">
+
+        <md-sidenav  ng-click="ul.toggleUsersList()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2" >
+          <md-list>
+            <md-list-item ng-repeat="it in ul.users">
+                <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
+                  {{it.name}}
+                </md-button>
+            </md-list-item>
+          </md-list>
+        </md-sidenav>
+
+        <md-content flex id="content">
+          <h2>{{ul.selected.name}}</h2>
+          <p>{{ul.selected.content}}</p>
+
+          <md-button class="share" md-no-ink ng-click="ul.share(ul.selected)" aria-label="Share with {{ ul.selected.name }}">
+            <md-icon md-svg-icon="share"></md-icon>
+          </md-button>
+        </md-content>
+
+    </div>
+
   
   <!-- Angular Material requires Angular.js Libraries -->
   <script src="lib/angular.min.js"></script>

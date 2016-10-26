@@ -1,5 +1,5 @@
 
-angular.module('BlankApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'users'])
+angular.module('starterApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'users'])
   
 .run(function($log){
     $log.debug('MyApp is ready now!')
