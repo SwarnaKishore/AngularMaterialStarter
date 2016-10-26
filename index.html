@@ -1,0 +1,69 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="lib/angular-material.min.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="lib/docs.css">
+</head>
+
+<body ng-app="BlankApp" ng-controller="UserController as ul" layout="column" ng-cloak>
+    <md-toolbar layout="row">
+      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+        <md-icon md-svg-icon="menu" ></md-icon>
+      </md-button>
+      <h1>Angular Material - Starter App</h1>
+    </md-toolbar>
+
+  <div ng-cloak class="container" layout="row" flex>
+    <!--declarative components are md- the ones below-->
+    <!--a second type is a programmatic component-interact with these through a programmatic api bottom sheet is one of them and you can see that we've injected in the UserController $mdBottomSheet-->
+      <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+      
+        <md-list>
+          <md-list-item ng-repeat="u in ul.users">
+            <md-button ng-click="ul.selectUser(u)">
+             {{u.name}}
+            </md>
+           </md-list-item>
+           
+           
+        </md-list>
+    
+    </md-sidenav>
+      <md-content id="content" flex>
+         
+        <h2>{{ul.selected.name}}</h2>
+        <p>{{ul.selected.content}}</p>
+        <md-button class="share" md-no-ink aria-label="Share" ng-click="ul.share(ul.selected)">
+          <md-icon md-svg-icon="share"></md-icon>
+        </md-button>
+      </md-content>
+  </div>
+  
+
+  
+  
+  
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-animate.min.js"></script>
+  <script src="lib/angular-aria.min.js"></script>
+  <script src="lib/svg-assets-cache.js"></script>
+  <script src="lib/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="lib/angular-material.min.js"></script>
+  <script src="index.js"></script>
+
+  
+  
+
+
+</body>
+</html>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved. 
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+-->
