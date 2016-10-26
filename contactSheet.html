@@ -1,15 +1,21 @@
 <md-bottom-sheet class="md-list md-has-header">
 
-    <md-subheader>
-        Contact <span class="name">{{ vm.user.name }}</span>:
-    </md-subheader>
-
+    
     <md-list>
-      <md-list-item ng-repeat="item in vm.items">
+      <md-list-item>
+        <a style="border-bottom:none;" href="https://twitter.com/intent/tweet?source=http%3A%2F%2Ftutorialhunt.herokuapp.com%2F&text=Check%20out%20Tutorial%20hunt%20to%20view%20and%20share%20the%20best%20tutorials%20at%20one%20place:%20http%3A%2F%2Ftutorialhunt.herokuapp.com%2F&via=swarnakishoree" target="_blank" title="Tweet">
         <md-button ng-click="vm.contactUser(item)">
-            <md-icon md-svg-icon="{{ item.icon_url }}"></md-icon>
-            {{item.name}}
-        </md-button>
+            <md-icon md-svg-icon="twitter" ></md-icon>
+            Twitter
+        </md-button></a>
+      </md-list-item>
+
+       <md-list-item>
+       <a style="border-bottom:none;" href="https://plus.google.com/share?url=http%3A%2F%2Ftutorialhunt.herokuapp.com%2F" target="_blank" title="Share on Google+">
+        <md-button ng-click="vm.contactUser(item)">
+            <md-icon md-svg-icon="google_plus" ></md-icon>
+            Google Plus
+        </md-button></a>
       </md-list-item>
     </md-list>
 

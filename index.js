@@ -15,7 +15,9 @@ angular.module('starterApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCach
   
   
 $mdIconProvider.icon('share', 'svg/share.svg', 24)
-               .icon('menu' , 'svg/menu.svg', 24);
+               .icon('menu' , 'svg/menu.svg', 24)
+               .icon("google_plus", 'svg/googlePlus.svg', 512)
+               .icon("twitter"    , 'svg/twitter.svg', 512);
      
 });
 
