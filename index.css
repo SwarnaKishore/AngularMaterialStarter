@@ -5,6 +5,11 @@ html, body {
   margin: 0px;
   padding: 0px;
 }
+hr {
+    color: black;
+    border: 0;
+    border-top: 1px solid #eee;
+}
 
 /* Toolbar area */
 
